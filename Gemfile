@@ -20,6 +20,7 @@ group :development do
   gem "hotwire-livereload"
   gem "prettier_print", require: false
   gem "rubocop-govuk", require: false
+  gem "solargraph", require: false
   gem "spring"
   gem "syntax_tree", require: false
   gem "syntax_tree-haml", require: false
