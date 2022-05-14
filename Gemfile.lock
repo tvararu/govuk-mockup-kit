@@ -74,13 +74,23 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hotwire-livereload (1.1.0)
+      listen (>= 3.0.0)
+      rails (>= 6.0.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.0.3)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
+    listen (3.7.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -141,6 +151,9 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rb-fsevent (0.11.1)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
     reline (0.3.1)
       io-console (~> 0.5)
     spring (4.0.0)
@@ -154,6 +167,9 @@ GEM
     strscan (3.0.3)
     thor (1.2.1)
     timeout (0.2.0)
+    turbo-rails (1.0.1)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     websocket-driver (0.7.5)
@@ -166,11 +182,14 @@ PLATFORMS
 
 DEPENDENCIES
   debug
+  hotwire-livereload (~> 1.1)
+  importmap-rails (~> 1.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
   spring
   sprockets-rails
+  turbo-rails
 
 RUBY VERSION
    ruby 3.1.2p20
