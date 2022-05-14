@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title GovukMockupKit
+    meta name="viewport" content="width=device-width,initial-scale=1"
+
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application"
+
+    - if Rails.env.development?
+      = javascript_include_tag "hotwire-livereload", defer: true
+    = javascript_importmap_tags
+
+  body
+    = yield

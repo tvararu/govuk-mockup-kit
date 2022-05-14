@@ -10,6 +10,7 @@ gem "puma"
 gem "sprockets-rails"
 
 gem "importmap-rails"
+gem "slim"
 gem "turbo-rails"
 
 group :development, :test do
