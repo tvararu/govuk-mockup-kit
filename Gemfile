@@ -5,18 +5,22 @@ ruby "3.1.2"
 
 gem "rails", "~> 7.0.3"
 
-gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
+gem "pg"
+gem "puma"
 gem "sprockets-rails"
 
-gem "importmap-rails", "~> 1.0"
+gem "importmap-rails"
 gem "turbo-rails"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
-  gem "hotwire-livereload", "~> 1.1"
+  gem "hotwire-livereload"
+  gem "prettier_print", require: false
   gem "spring"
+  gem "syntax_tree", require: false
+  gem "syntax_tree-haml", require: false
+  gem "syntax_tree-rbs", require: false
 end

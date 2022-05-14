@@ -1,0 +1,11 @@
+{
+  "name": "govuk-mockup-kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Theodor Vararu <theo@vararu.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^3.1.2",
+    "prettier": "^2.6.2"
+  }
+}
