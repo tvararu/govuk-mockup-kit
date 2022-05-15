@@ -10,10 +10,10 @@ class JourneysTest < ApplicationSystemTestCase
 
   test "should create journey" do
     visit journeys_url
-    click_on "New journey"
+    click_on "Create a new journey"
 
     fill_in "Title", with: @journey.title
-    click_on "Create Journey"
+    click_on "Continue"
 
     assert_text "Journey was successfully created"
     click_on "Back"
@@ -21,10 +21,10 @@ class JourneysTest < ApplicationSystemTestCase
 
   test "should update Journey" do
     visit journey_url(@journey)
-    click_on "Edit this journey", match: :first
+    click_on "Change title", match: :first
 
     fill_in "Title", with: @journey.title
-    click_on "Update Journey"
+    click_on "Continue"
 
     assert_text "Journey was successfully updated"
     click_on "Back"
@@ -32,7 +32,7 @@ class JourneysTest < ApplicationSystemTestCase
 
   test "should destroy Journey" do
     visit journey_url(@journey)
-    click_on "Destroy this journey", match: :first
+    click_on "Delete this journey", match: :first
 
     assert_text "Journey was successfully destroyed"
   end

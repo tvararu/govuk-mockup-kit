@@ -2,10 +2,8 @@ p style="color: green" = notice
 
 h1 Journeys
 
-#journeys
-  - @journeys.each do |journey|
-    == render journey
-    p
-      = link_to "Show this journey", journey
+ul.govuk-list.govuk-list--bullet
+  - for journey in  @journeys
+    li= link_to journey.title, journey
 
-= link_to "New journey", new_journey_path
+= govuk_button_link_to "Create a new journey", new_journey_path

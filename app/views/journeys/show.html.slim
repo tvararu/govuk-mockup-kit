@@ -1,10 +1,15 @@
-p style="color: green" = notice
+= govuk_back_link href: journeys_path, text: 'Back'
 
-== render @journey
+- if notice
+  p style="color: green" = notice
 
-div
-  => link_to "Edit this journey", edit_journey_path(@journey)
-  '|
-  =< link_to "Back to journeys", journeys_path
+h1= @journey.title
 
-  = button_to "Destroy this journey", @journey, method: :delete
+= govuk_summary_list do |summary_list|
+  - summary_list.row do |row|
+    - row.key { 'Title' }
+    - row.value { @journey.title }
+    - row.action(text: "Change", href: edit_journey_path(@journey), visually_hidden_text: 'title')
+
+= govuk_button_to "Delete this journey", @journey,
+  method: :delete, warning: true
