@@ -9,6 +9,7 @@ gem "pg"
 gem "puma"
 gem "sprockets-rails"
 
+gem "cssbundling-rails"
 gem "jsbundling-rails"
 gem "slim"
 gem "turbo-rails"

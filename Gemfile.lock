@@ -85,6 +85,8 @@ GEM
     cliver (0.3.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    cssbundling-rails (1.1.0)
+      railties (>= 6.0.0)
     cuprite (0.13)
       capybara (>= 2.1, < 4)
       ferrum (~> 0.11.0)
@@ -294,6 +296,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  cssbundling-rails
   cuprite
   debug
   hotwire-livereload
