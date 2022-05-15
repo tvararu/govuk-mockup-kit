@@ -11,5 +11,6 @@ h1= @journey.title
     - row.value { @journey.title }
     - row.action(text: "Change", href: edit_journey_path(@journey), visually_hidden_text: 'title')
 
-= govuk_button_to "Delete this journey", @journey,
-  method: :delete, warning: true
+= govuk_details(summary_text: 'Danger zone ⚠️') do
+  = govuk_button_to "Delete this journey (no confirmation, not reversible)", @journey,
+    method: :delete, warning: true, class: 'govuk-!-margin-bottom-0'
