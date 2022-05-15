@@ -32,6 +32,7 @@ class JourneysTest < ApplicationSystemTestCase
 
   test "should destroy Journey" do
     visit journey_url(@journey)
+    find(".govuk-details__summary-text", text: "Danger zone ⚠️").click
     click_on "Delete this journey", match: :first
 
     assert_text "Journey was successfully destroyed"
