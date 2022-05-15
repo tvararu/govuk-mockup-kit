@@ -14,6 +14,8 @@ gem "jsbundling-rails"
 gem "slim"
 gem "turbo-rails"
 
+gem "govuk-components"
+
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end
