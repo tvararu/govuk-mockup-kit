@@ -15,6 +15,7 @@ gem "slim-rails"
 gem "turbo-rails"
 
 gem "govuk-components"
+gem "govuk_design_system_formbuilder"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]

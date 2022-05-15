@@ -93,6 +93,7 @@ GEM
     debug (1.5.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
+    deep_merge (1.2.2)
     diff-lcs (1.5.0)
     digest (3.1.0)
     e2mmap (0.1.0)
@@ -109,6 +110,11 @@ GEM
       activemodel (>= 6.1)
       railties (>= 6.1)
       view_component (~> 2.49.1)
+    govuk_design_system_formbuilder (3.0.2)
+      actionview (>= 6.1)
+      activemodel (>= 6.1)
+      activesupport (>= 6.1)
+      deep_merge (~> 1.2.1)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -309,6 +315,7 @@ DEPENDENCIES
   cuprite
   debug
   govuk-components
+  govuk_design_system_formbuilder
   hotwire-livereload
   jsbundling-rails
   pg
