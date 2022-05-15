@@ -19,7 +19,10 @@ sounds cool to you too feel free to reach out and chat to me about it.
 asdf install # Install relevant ruby versions/tooling, see .tool-versions
 pg_ctl start # If not already running postgres
 bin/setup
+
 bin/dev
+bin/test
+bin/lint
 ```
 
 ## Licence
