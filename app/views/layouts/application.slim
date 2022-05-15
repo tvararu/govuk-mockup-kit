@@ -12,5 +12,7 @@ html
       = javascript_include_tag "hotwire-livereload", defer: true
     = javascript_importmap_tags
 
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+
   body
     = yield

@@ -10,6 +10,7 @@ gem "puma"
 gem "sprockets-rails"
 
 gem "importmap-rails"
+gem "jsbundling-rails"
 gem "slim"
 gem "turbo-rails"
 
