@@ -1,24 +1,27 @@
-# README
+# GOVUK Mockup Kit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I had this idea to make a "website builder" style interface (like Squarespace /
+Wix) backed by the [GOVUK Design
+System](https://design-system.service.gov.uk/get-started/). So you'd be able to
+drag and drop components, create new pages, and by the end of it have something
+that looks like a prototype of a service. Maybe a button at the end to export
+it / "eject" it as a self-contained
+[govuk-prototype-kit](https://govuk-prototype-kit.herokuapp.com/docs) or
+[govuk-prototype-rig](https://github.com/x-govuk/govuk-prototype-rig) project.
 
-Things you may want to cover:
+If you're reading this, I never got around to finishing up this idea, but like
+most things I work on and never finish I pushed it up to GitHub anyway. If it
+sounds cool to you too feel free to reach out and chat to me about it.
 
-- Ruby version
+## Setup
 
-- System dependencies
+```sh
+asdf install # Install relevant ruby versions/tooling, see .tool-versions
+pg_ctl start # If not already running postgres
+bin/setup
+bin/dev
+```
 
-- Configuration
+## Licence
 
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+[GPLv3](LICENSE).
