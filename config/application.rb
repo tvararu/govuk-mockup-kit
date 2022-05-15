@@ -31,9 +31,6 @@ module GovukMockupKit
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
-
     config.assets.paths << Rails.root.join(
       "node_modules/govuk-frontend/govuk/assets"
     )
