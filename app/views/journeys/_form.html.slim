@@ -1,0 +1,14 @@
+= form_with(model: @journey) do |form|
+  - if @journey.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@journey.errors.count, "error")} prohibited this journey from being saved:"
+      ul
+        - @journey.errors.each do |error|
+          li = error.full_message
+
+  div
+    = form.label :title, style: "display: block"
+    = form.text_field :title
+
+  div
+    = form.submit
