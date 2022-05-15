@@ -2,8 +2,13 @@ p style="color: green" = notice
 
 h1 Journeys
 
+- if @journeys.length.zero?
+  p No journeys, create one.
+- else
+  p Showing #{@journeys.length} of #{@journeys.length} journeys:
+
 ul.govuk-list.govuk-list--bullet
-  - for journey in  @journeys
+  - for journey in @journeys
     li= link_to journey.title, journey
 
 = govuk_button_link_to "Create a new journey", new_journey_path
