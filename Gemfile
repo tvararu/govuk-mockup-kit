@@ -11,6 +11,7 @@ gem "pg"
 gem "propshaft"
 gem "puma"
 gem "slim"
+gem "slim-rails"
 gem "turbo-rails"
 
 gem "govuk-components"
