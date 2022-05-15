@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#home"
+  root to: redirect("/journeys")
 
   resources :journeys
 end
