@@ -5,12 +5,11 @@ ruby "3.1.2"
 
 gem "rails", "~> 7.0.3"
 
-gem "pg"
-gem "puma"
-gem "sprockets-rails"
-
 gem "cssbundling-rails"
 gem "jsbundling-rails"
+gem "pg"
+gem "propshaft"
+gem "puma"
 gem "slim"
 gem "turbo-rails"
 
