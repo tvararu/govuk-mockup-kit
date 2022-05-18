@@ -1,5 +1,10 @@
 - content_for :back_link_url, journeys_path
 
-h1 Editing journey
-
-== render "form", journey: @journey
+.govuk-grid-row
+  .govuk-grid-column-two-thirds
+    = form_with(model: @journey) do |f|
+      = f.govuk_error_summary
+      = f.govuk_text_field :title,
+        label: { text: 'What is the name of your journey?',
+                 tag: 'h1', size: 'l'}
+      = f.govuk_submit

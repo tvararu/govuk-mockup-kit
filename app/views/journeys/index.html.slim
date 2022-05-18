@@ -1,7 +1,7 @@
 - if notice
   p style="color: green" = notice
 
-h1.govuk-heading-l GOV.UK Mockup Kit
+h1 GOV.UK Mockup Kit
 
 = govuk_button_link_to "Create a journey", new_journey_path
 
@@ -11,5 +11,5 @@ h1.govuk-heading-l GOV.UK Mockup Kit
 = govuk_summary_list do |summary_list|
   - for journey in @journeys
     - summary_list.row do |row|
-      - row.value { journey.title }
+      - row.key(text: journey.title, classes: 'govuk-!-font-weight-regular')
       - row.action(text: "Edit", href: journey, visually_hidden_text: journey.title)

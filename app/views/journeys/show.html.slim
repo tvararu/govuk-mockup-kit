@@ -3,14 +3,19 @@
 - if notice
   p style="color: green" = notice
 
-h1= @journey.title
+.govuk-grid-row
+  .govuk-grid-column-two-thirds
+    h1
+      span.govuk-caption-l Redundancy payments form: amend my personal details
+      | Journey overview
 
-= govuk_summary_list do |summary_list|
-  - summary_list.row do |row|
-    - row.key { 'Title' }
-    - row.value { @journey.title }
-    - row.action(text: "Change", href: edit_journey_path(@journey), visually_hidden_text: 'title')
+    h2.govuk-heading-m class="govuk-!-margin-top-7 govuk-!-margin-bottom-0"
+      | Journey name
+    = govuk_summary_list do |summary_list|
+      - summary_list.row do |row|
+        - row.key(text: @journey.title, classes: 'govuk-!-font-weight-regular')
+        - row.action(text: "Edit", href: edit_journey_path(@journey), visually_hidden_text: 'title')
 
-= govuk_details(summary_text: 'Danger zone ⚠️') do
-  = govuk_button_to "Delete this journey (no confirmation, not reversible)", @journey,
-    method: :delete, warning: true, class: 'govuk-!-margin-bottom-0'
+    = govuk_details(summary_text: 'Danger zone ⚠️') do
+      = govuk_button_to "Delete this journey (no confirmation, not reversible)", @journey,
+        method: :delete, warning: true, class: 'govuk-!-margin-bottom-0'

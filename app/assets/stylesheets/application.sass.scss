@@ -5,7 +5,7 @@ $govuk-assets-path: "/";
 @import "govuk-frontend/govuk/all";
 
 h1 {
-  @extend .govuk-heading-xl;
+  @extend .govuk-heading-l;
 }
 
 h2 {
