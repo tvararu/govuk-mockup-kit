@@ -9,13 +9,10 @@ h1 {
 }
 
 h2 {
-  @extend .govuk-heading-l;
-}
-
-h3 {
   @extend .govuk-heading-m;
 }
 
+h3,
 h4,
 h5,
 h6 {
