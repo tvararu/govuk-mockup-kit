@@ -17,11 +17,6 @@
           visually_hidden_text: 'title')
 
     h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Your pages
-    = govuk_summary_list do |summary_list|
-      - summary_list.row do |row|
-        - row.key(text: @journey.title, classes: 'govuk-!-font-weight-regular')
-        - row.action(text: "Edit", href: edit_journey_path(@journey),
-          visually_hidden_text: 'title')
 
     h2 Next steps
 

@@ -9,7 +9,7 @@ h1 GOV.UK Mockup Kit
   h2 #{@journeys.length} of #{@journeys.length} journeys
 
 = govuk_summary_list do |summary_list|
-  - for journey in @journeys
+  - @journeys.each do |journey|
     - summary_list.row do |row|
       - row.key(text: journey.title, classes: 'govuk-!-font-weight-regular')
       - row.action(text: "Edit",
