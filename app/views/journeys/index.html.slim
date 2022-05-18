@@ -6,10 +6,11 @@ h1 GOV.UK Mockup Kit
 = govuk_button_link_to "Create a journey", new_journey_path
 
 - unless @journeys.length.zero?
-  h2.govuk-heading-m Showing #{@journeys.length} of #{@journeys.length} journeys
+  h2 #{@journeys.length} of #{@journeys.length} journeys
 
 = govuk_summary_list do |summary_list|
   - for journey in @journeys
     - summary_list.row do |row|
       - row.key(text: journey.title, classes: 'govuk-!-font-weight-regular')
-      - row.action(text: "Edit", href: journey, visually_hidden_text: journey.title)
+      - row.action(text: "Edit",
+        href: journey, visually_hidden_text: journey.title)

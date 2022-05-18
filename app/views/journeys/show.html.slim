@@ -9,13 +9,26 @@
       span.govuk-caption-l Redundancy payments form: amend my personal details
       | Journey overview
 
-    h2.govuk-heading-m class="govuk-!-margin-top-7 govuk-!-margin-bottom-0"
-      | Journey name
+    h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Journey name
     = govuk_summary_list do |summary_list|
       - summary_list.row do |row|
         - row.key(text: @journey.title, classes: 'govuk-!-font-weight-regular')
-        - row.action(text: "Edit", href: edit_journey_path(@journey), visually_hidden_text: 'title')
+        - row.action(text: "Edit", href: edit_journey_path(@journey),
+          visually_hidden_text: 'title')
+
+    h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Your pages
+    = govuk_summary_list do |summary_list|
+      - summary_list.row do |row|
+        - row.key(text: @journey.title, classes: 'govuk-!-font-weight-regular')
+        - row.action(text: "Edit", href: edit_journey_path(@journey),
+          visually_hidden_text: 'title')
+
+    h2 Next steps
+
+    p
+      = link_to 'Test the journey in a new tab (TODO)',
+        'javascript:alert("TODO")'
 
     = govuk_details(summary_text: 'Danger zone ⚠️') do
-      = govuk_button_to "Delete this journey (no confirmation, not reversible)", @journey,
+      = govuk_button_to "Delete this journey (permanent)", @journey,
         method: :delete, warning: true, class: 'govuk-!-margin-bottom-0'
