@@ -5,15 +5,15 @@ class JourneysTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit journeys_url
-    assert_selector "h1", text: "Journeys"
+    assert_selector "h1", text: "GOV.UK Mockup Kit"
   end
 
   test "should create journey" do
     visit journeys_url
-    click_on "Create a new journey"
+    click_on "Create a journey"
 
-    fill_in "Title", with: @journey.title
-    click_on "Continue"
+    fill_in "What is the name of your journey?", with: @journey.title
+    click_on "Save and continue"
 
     assert_text "Journey was successfully created"
     click_on "Back"
@@ -21,10 +21,10 @@ class JourneysTest < ApplicationSystemTestCase
 
   test "should update Journey" do
     visit journey_url(@journey)
-    click_on "Change title", match: :first
+    click_on "Edit title", match: :first
 
-    fill_in "Title", with: @journey.title
-    click_on "Continue"
+    fill_in "What is the name of your journey?", with: @journey.title
+    click_on "Save and continue"
 
     assert_text "Journey was successfully updated"
     click_on "Back"
