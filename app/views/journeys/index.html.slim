@@ -1,14 +1,15 @@
-p style="color: green" = notice
+- if notice
+  p style="color: green" = notice
 
-h1 Journeys
+h1.govuk-heading-l GOV.UK Mockup Kit
 
-- if @journeys.length.zero?
-  p No journeys, create one.
-- else
-  p Showing #{@journeys.length} of #{@journeys.length} journeys:
+= govuk_button_link_to "Create a journey", new_journey_path
 
-ul.govuk-list.govuk-list--bullet
+- unless @journeys.length.zero?
+  h2.govuk-heading-m Showing #{@journeys.length} of #{@journeys.length} journeys
+
+= govuk_summary_list do |summary_list|
   - for journey in @journeys
-    li= link_to journey.title, journey
-
-= govuk_button_link_to "Create a new journey", new_journey_path
+    - summary_list.row do |row|
+      - row.value { journey.title }
+      - row.action(text: "Edit", href: journey, visually_hidden_text: journey.title)
