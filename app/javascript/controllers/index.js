@@ -4,5 +4,8 @@
 
 import { application } from "./application";
 
-import NotificationBannerController from "./notification_banner_controller.js";
-application.register("notification-banner", NotificationBannerController);
+import GovukNotificationBannerController from "./govuk_notification_banner_controller.js";
+application.register(
+  "govuk-notification-banner",
+  GovukNotificationBannerController
+);
