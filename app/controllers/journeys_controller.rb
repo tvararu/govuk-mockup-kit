@@ -24,7 +24,8 @@ class JourneysController < ApplicationController
     @journey = Journey.new(journey_params)
 
     if @journey.save
-      redirect_to @journey, notice: "Journey was successfully created."
+      flash[:success] = "Journey was successfully created."
+      redirect_to @journey
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +34,8 @@ class JourneysController < ApplicationController
   # PATCH/PUT /journeys/1
   def update
     if @journey.update(journey_params)
-      redirect_to @journey, notice: "Journey was successfully updated."
+      flash[:success] = "Journey was successfully updated."
+      redirect_to @journey
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +44,8 @@ class JourneysController < ApplicationController
   # DELETE /journeys/1
   def destroy
     @journey.destroy!
-    redirect_to journeys_url, notice: "Journey was successfully destroyed."
+    flash[:success] = "Journey was successfully destroyed."
+    redirect_to journeys_url
   end
 
   private

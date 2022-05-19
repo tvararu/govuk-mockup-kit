@@ -1,8 +1,5 @@
 - content_for :back_link_url, journeys_path
 
-- if notice
-  p style="color: green" = notice
-
 .govuk-grid-row
   .govuk-grid-column-two-thirds
     h1
@@ -17,6 +14,12 @@
           visually_hidden_text: 'title')
 
     h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Your pages
+    = govuk_summary_list do |summary_list|
+      - @journey.pages.each do |page|
+        - summary_list.row do |row|
+          - row.key(text: page.title, classes: 'govuk-!-font-weight-regular')
+          - row.action(text: "Edit", href: edit_page_path(page),
+            visually_hidden_text: page.title)
 
     h2 Next steps
 

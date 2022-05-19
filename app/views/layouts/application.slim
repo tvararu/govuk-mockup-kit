@@ -56,6 +56,7 @@ html.govuk-template lang="en"
       = govuk_back_link(href: yield(:back_link_url)) unless yield(:back_link_url).blank?
 
       main.govuk-main-wrapper#main-content role="main"
+        = render(FlashMessageComponent.new(flash: flash))
         = yield
 
     = govuk_footer
