@@ -17,6 +17,8 @@
           visually_hidden_text: 'title')
 
     h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Your pages
+    - if @journey.pages.size.zero?
+      p class="govuk-!-margin-top-2" You haven’t added any pages yet.
     = govuk_summary_list do |summary_list|
       - @journey.pages.each do |page|
         - summary_list.row do |row|
@@ -31,6 +33,6 @@
         'javascript:alert("Not implemented")',
         class: 'app-disabled-link'
 
-    / = govuk_details(summary_text: 'Danger zone ⚠️') do
-    /   = govuk_button_to "Delete this journey (permanent)", @journey,
-    /     method: :delete, warning: true, class: 'govuk-!-margin-bottom-0'
+    = govuk_details(summary_text: 'Danger zone ⚠️') do
+      = govuk_button_to "Delete this journey (deletes all pages)", @journey,
+        method: :delete, warning: true, class: 'govuk-!-margin-bottom-0'
