@@ -1,10 +1,3 @@
 - content_for :back_link_url, journey_path(@journey)
 
-.govuk-grid-row
-  .govuk-grid-column-two-thirds
-    = form_with(model: @journey) do |f|
-      = f.govuk_error_summary
-      = f.govuk_text_field :title,
-        label: { text: 'What is the name of your journey?',
-                 tag: 'h1', size: 'l'}
-      = f.govuk_submit 'Save and continue'
+= render "form", journey: @journey

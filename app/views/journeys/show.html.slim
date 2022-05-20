@@ -18,7 +18,7 @@
       - @journey.pages.each do |page|
         - summary_list.row do |row|
           - row.key(text: page.title, classes: 'govuk-!-font-weight-regular')
-          - row.action(text: "Edit", href: edit_page_path(page),
+          - row.action(text: "Edit", href: edit_journey_page_path(page),
             visually_hidden_text: page.title)
 
     h2 Next steps
