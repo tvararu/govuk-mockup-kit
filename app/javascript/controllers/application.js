@@ -1,9 +1,14 @@
-import { Application } from "@hotwired/stimulus";
+import { Application, defaultSchema } from "@hotwired/stimulus";
 
-const application = Application.start();
+const schema = {
+  ...defaultSchema,
+  controllerAttribute: "data-module",
+};
+
+const application = Application.start(document.documentElement, schema);
 
 // Configure Stimulus development experience
-application.debug = false;
+application.debug = true;
 window.Stimulus = application;
 
 export { application };
