@@ -44,12 +44,12 @@
     h2 Next steps
 
     p
-      = link_to 'Test the journey in a new tab (not implemented)',
-        'javascript:alert("Not implemented")',
-        class: 'app-disabled-link'
+      = link_to 'Test the journey in a new tab', preview_path(@journey),
+        class: 'govuk-link--no-visited-state', target: '_blank'
 
     p
-      = link_to 'Export to prototype rig', journey_export_path(@journey)
+      = link_to 'Export to prototype rig', journey_export_path(@journey),
+        class: 'govuk-link--no-visited-state'
 
     = govuk_details(summary_text: 'Danger zone ⚠️') do
       = govuk_button_to "Delete this journey (deletes all pages)", @journey,

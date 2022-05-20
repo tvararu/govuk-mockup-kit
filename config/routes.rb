@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
     resources :pages
   end
+
+  get "/preview/:journey_id", to: "preview#show", as: :preview
 end
