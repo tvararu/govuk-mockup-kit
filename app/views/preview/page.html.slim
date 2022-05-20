@@ -1,0 +1,9 @@
+.govuk-grid-row
+  .govuk-grid-column-two-thirds
+    = form_with(model: @page, url: '#') do |f|
+      = f.govuk_error_summary
+      = f.govuk_text_field :foo,
+        label: { text: @page.title,
+                 tag: 'h1', size: 'l'}
+      / = f.govuk_submit 'Continue'
+      = govuk_button_link_to 'Continue', @next_path

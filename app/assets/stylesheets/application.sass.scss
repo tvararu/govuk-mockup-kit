@@ -8,6 +8,10 @@ h1 {
   @extend .govuk-heading-l;
 }
 
+.govuk-panel--confirmation h1 {
+  color: #ffffff;
+}
+
 h2 {
   @extend .govuk-heading-m;
 }
