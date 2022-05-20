@@ -10,3 +10,7 @@ en:
           attributes:
             title:
               blank: Enter a title
+        page:
+          attributes:
+            title:
+              blank: Enter a title

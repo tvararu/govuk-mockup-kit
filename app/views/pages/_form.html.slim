@@ -1,0 +1,7 @@
+.govuk-grid-row
+  .govuk-grid-column-two-thirds
+    = form_with(model: @page,
+      url: @page.persisted? ? journey_page_path : journey_pages_path) do |f|
+      = f.govuk_error_summary
+      = f.govuk_text_field :title
+      = f.govuk_submit

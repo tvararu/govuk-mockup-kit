@@ -18,4 +18,6 @@
 #
 class Page < ApplicationRecord
   belongs_to :journey
+
+  validates :title, presence: true
 end

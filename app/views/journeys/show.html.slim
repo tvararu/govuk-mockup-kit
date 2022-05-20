@@ -6,6 +6,9 @@
       span.govuk-caption-l Redundancy payments form: amend my personal details
       | Journey overview
 
+    = govuk_button_link_to "Add a page", new_journey_page_path(@journey),
+      class: 'govuk-!-margin-bottom-3 govuk-!-margin-top-3'
+
     h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Journey name
     = govuk_summary_list do |summary_list|
       - summary_list.row do |row|
@@ -18,7 +21,7 @@
       - @journey.pages.each do |page|
         - summary_list.row do |row|
           - row.key(text: page.title, classes: 'govuk-!-font-weight-regular')
-          - row.action(text: "Edit", href: edit_journey_page_path(page),
+          - row.action(text: "Edit", href: edit_journey_page_path(@journey, page),
             visually_hidden_text: page.title)
 
     h2 Next steps
