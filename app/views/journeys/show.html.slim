@@ -26,6 +26,21 @@
           - row.action(text: "Edit", href: edit_journey_page_path(@journey, page),
             visually_hidden_text: page.title)
 
+    h2 class="govuk-!-margin-top-7 govuk-!-margin-bottom-0" Standard pages
+    = govuk_summary_list do |summary_list|
+      - summary_list.row do |row|
+        - row.key(classes: 'govuk-!-width-full') do
+          p Check your answers
+          p.govuk-hint This page lists all the questions and answers so people
+            can check them before they submit the form. (Not implemented: You
+            can add a declaration for people to confirm their answers.)
+      - summary_list.row do |row|
+        - row.key(classes: 'govuk-!-width-full') do
+          p Confirmation
+          p.govuk-hint This page will be shown to confirm the form has been
+            submitted. (Not implemented: You can add information to tell people
+            what will happen next.)
+
     h2 Next steps
 
     p
