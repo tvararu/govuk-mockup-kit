@@ -19,6 +19,15 @@ h6 {
   @extend .govuk-heading-s;
 }
 
+ul {
+  @extend .govuk-list;
+}
+
+ol {
+  @extend .govuk-list;
+  @extend .govuk-list--number;
+}
+
 .app-disabled-link {
   color: $govuk-secondary-text-colour !important;
 }

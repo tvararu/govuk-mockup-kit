@@ -1,0 +1,28 @@
+- content_for :back_link_url, journey_path(params[:journey_id])
+
+.govuk-grid-row
+  .govuk-grid-column-two-thirds
+    h1 Export your journey
+
+    p
+      | Use the button below to create a zip file with a custom version of the
+      a< href="https://github.com/x-govuk/govuk-prototype-rig"
+        | x-govuk/govuk-prototype-rig
+      | . Read the
+      a<> href="https://govuk-prototype-kit.herokuapp.com/docs"
+        | prototype kit documentation
+      | for more information on how to set it up.
+
+    p The export process will:
+
+    ol
+      li Clone the latest prototype-rig
+      li Customise it to match your journey
+      li Compress it into a zip
+      li Store it in the database
+
+    p If you keep the page open, the zip will download automatically. You can
+      close the page and come back later.
+
+    = govuk_button_link_to "Export (not implemented)",
+      "javascript:alert('Not implemented')", disabled: true

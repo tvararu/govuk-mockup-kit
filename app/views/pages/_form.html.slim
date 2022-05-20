@@ -60,4 +60,5 @@
       = govuk_button_to "Delete page", journey_page_path(@page),
         method: :delete, warning: true
 
-    = link_to "Go to journey overview", journey_path(@page.journey)
+      p
+        = link_to "Go to journey overview", journey_path(@page.journey)

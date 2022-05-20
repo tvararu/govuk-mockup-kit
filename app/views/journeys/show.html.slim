@@ -3,7 +3,7 @@
 .govuk-grid-row
   .govuk-grid-column-two-thirds
     h1
-      span.govuk-caption-l Redundancy payments form: amend my personal details
+      span.govuk-caption-l= @journey.title
       | Journey overview
 
     = govuk_button_link_to "Add a page", new_journey_page_path(@journey),
@@ -32,6 +32,9 @@
       = link_to 'Test the journey in a new tab (not implemented)',
         'javascript:alert("Not implemented")',
         class: 'app-disabled-link'
+
+    p
+      = link_to 'Export to prototype rig', journey_export_path(@journey)
 
     = govuk_details(summary_text: 'Danger zone ⚠️') do
       = govuk_button_to "Delete this journey (deletes all pages)", @journey,
