@@ -1,7 +1,37 @@
 .govuk-grid-row
   .govuk-grid-column-two-thirds
+    h1
+      span.govuk-caption-l Page 1
+      = @page.title || 'Edit question'
+
     = form_with(model: @page,
       url: @page.persisted? ? journey_page_path : journey_pages_path) do |f|
       = f.govuk_error_summary
-      = f.govuk_text_field :title
+
+      = f.govuk_text_field :title,
+        label: { text: 'Question text', size: 'm' },
+        hint: { text: 'Ask a question the way you would in person. ' + \
+                      'For example ‘What is your address?’' }
+
+      = f.govuk_text_field :short_name,
+        label: { text: 'Question short name (optional)', size: 'm' },
+        hint: { text: 'The short name will be used when the form’s ' + \
+                      'questions are all displayed in a list. Use a short ' + \
+                      'descriptive name. For example ‘Address’.'},
+        disabled: true, placeholder: "Not implemented"
+
+      hr.govuk-section-break.govuk-section-break--m.govuk-section-break--visible
+
+      = govuk_details(summary_text: 'Add hint text to help people ' + \
+                                    'answer the question') do
+        = f.govuk_text_field :hint_text,
+          label: { text: 'Hint text (optional)', size: 'm',
+            class: 'govuk-visually-hidden' },
+          hint: { text: 'You can use hint text if you need to explain ' + \
+            'the format the answer should be in, or where to ' + \
+            'find the information you’ve asked for.'},
+          disabled: true, placeholder: "Not implemented"
+
+      hr.govuk-section-break.govuk-section-break--m.govuk-section-break--visible
+
       = f.govuk_submit

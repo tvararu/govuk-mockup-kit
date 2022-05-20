@@ -18,3 +18,11 @@ h5,
 h6 {
   @extend .govuk-heading-s;
 }
+
+.app-disabled-link {
+  color: $govuk-secondary-text-colour !important;
+}
+
+input[disabled] {
+  border-color: $govuk-border-colour;
+}

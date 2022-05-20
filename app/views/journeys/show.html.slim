@@ -27,8 +27,9 @@
     h2 Next steps
 
     p
-      = link_to 'Test the journey in a new tab (TODO)',
-        'javascript:alert("TODO")'
+      = link_to 'Test the journey in a new tab (not implemented)',
+        'javascript:alert("Not implemented")',
+        class: 'app-disabled-link'
 
     / = govuk_details(summary_text: 'Danger zone ⚠️') do
     /   = govuk_button_to "Delete this journey (permanent)", @journey,
