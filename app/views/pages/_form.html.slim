@@ -1,8 +1,8 @@
 .govuk-grid-row
   .govuk-grid-column-two-thirds
     h1
-      span.govuk-caption-l Page 1
-      = @page.title || 'Edit question'
+      span.govuk-caption-l Page #{ @page.journey.pages.find_index(@page) + 1 }
+      = @page.title || 'New page'
 
     = form_with(model: @page,
       url: @page.persisted? ? journey_page_path : journey_pages_path) do |f|
@@ -28,10 +28,36 @@
           label: { text: 'Hint text (optional)', size: 'm',
             class: 'govuk-visually-hidden' },
           hint: { text: 'You can use hint text if you need to explain ' + \
-            'the format the answer should be in, or where to ' + \
-            'find the information you’ve asked for.'},
+                        'the format the answer should be in, or where to ' + \
+                        'find the information you’ve asked for.'},
           disabled: true, placeholder: "Not implemented"
 
       hr.govuk-section-break.govuk-section-break--m.govuk-section-break--visible
 
-      = f.govuk_submit
+      = f.govuk_radio_buttons_fieldset :answer_type, small: true,
+        legend: { text: 'What kind of answer do you need to this question?' },
+        hint: { text: 'The answer will be validated to check it’s in ' + \
+                      'the selected format. (Validation not implemented)' } do
+        = f.govuk_radio_button :answer_type, 'line',
+          label: { text: 'Single line of text' }, link_errors: true,
+          checked: true
+        = f.govuk_radio_button :answer_type, 'address',
+          label: { text: 'Address (N/A)' }, disabled: true
+        = f.govuk_radio_button :answer_type, 'date',
+          label: { text: 'Date (N/A)' }, disabled: true
+        = f.govuk_radio_button :answer_type, 'email',
+          label: { text: 'Email (N/A)' }, disabled: true
+        = f.govuk_radio_button :answer_type, 'nino',
+          label: { text: 'National Insurance number (N/A)' }, disabled: true
+        = f.govuk_radio_button :answer_type, 'phone',
+          label: { text: 'Phone number (N/A)' }, disabled: true
+
+
+      .govuk-button-group
+        = f.govuk_submit "Save changes"
+
+    - if @page.persisted?
+      = govuk_button_to "Delete page", journey_page_path(@page),
+        method: :delete, warning: true
+
+    = link_to "Go to journey overview", journey_path(@page.journey)
