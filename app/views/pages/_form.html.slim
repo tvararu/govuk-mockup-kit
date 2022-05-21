@@ -4,8 +4,7 @@
       span.govuk-caption-l Page #{ @page.journey.pages.find_index(@page) + 1 }
       = @page.title || 'New page'
 
-    = form_with(model: @page,
-      url: @page.persisted? ? journey_page_path : journey_pages_path) do |f|
+    = form_with(model: [:journey, @page]) do |f|
       = f.govuk_error_summary
 
       = f.govuk_text_field :title,
