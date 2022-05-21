@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :journeys do
     get "/export", to: "export#show"
+    post "/export", to: "export#create"
 
     resources :pages
   end
