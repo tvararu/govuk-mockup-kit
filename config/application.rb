@@ -34,5 +34,7 @@ module GovukMockupKit
     config.assets.paths << Rails.root.join(
       "node_modules/govuk-frontend/govuk/assets"
     )
+
+    config.exceptions_app = routes
   end
 end

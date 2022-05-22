@@ -4,7 +4,7 @@ html.govuk-template lang="en"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width,initial-scale=1"
 
-    title GOV.UK Mockup Kit
+    title= [yield(:page_title).presence, t('service.name')].compact.join(' - ')
 
     = csrf_meta_tags
     = csp_meta_tag

@@ -1,4 +1,7 @@
 en:
+  service:
+    name: GOV.UK Mockup Kit
+    email: theo@vararu.org
   notification_banner:
     info: Information
     warning: Warning
