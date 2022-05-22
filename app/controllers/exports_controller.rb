@@ -24,10 +24,6 @@ class ExportsController < ApplicationController
   end
 
   def send_export(export)
-    send_data(
-      export.data,
-      filename: export.name.gsub("tmp/", ""),
-      type: "application/zip"
-    )
+    send_data(export.data, filename: export.filename, type: "application/zip")
   end
 end

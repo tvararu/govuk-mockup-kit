@@ -19,4 +19,8 @@
 #
 class Export < ApplicationRecord
   belongs_to :journey
+
+  def filename
+    name.gsub("tmp/", "")
+  end
 end
