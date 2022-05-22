@@ -1,0 +1,28 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "<%= @journey.title %>" %}
+
+{% block main %}
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukInput({
+            label: {
+              text: "<%= @page.title %>",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            id: "event-name",
+            name: "event-name"
+          }) }}
+
+          {{ govukButton({
+            text: "Continue",
+            href: "<%= @next_page %>"
+          }) }}
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

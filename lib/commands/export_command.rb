@@ -26,6 +26,7 @@ class ExportCommand < Rails::Command::Base
 
     update_service_name
     add_start_page
+    add_journey_pages
     add_confirmation_page
 
     unless destination
@@ -71,10 +72,27 @@ class ExportCommand < Rails::Command::Base
   end
 
   def add_start_page
+    @next_page =
+      @journey.pages.length.zero? ? "/confirmation.html" : "/page-1.html"
     template "app/views/start.html"
     gsub_file "app/views/index.html",
               "startButton: {\n      href: \"#\"",
               "startButton: {\n      href: \"/start\""
+  end
+
+  def add_journey_pages
+    @journey.pages.each_with_index do |page, index|
+      @page = page
+      @next_page =
+        (
+          if (index + 1) == @journey.pages.length
+            "/confirmation.html"
+          else
+            "/page-#{index + 2}.html"
+          end
+        )
+      template "app/views/journey-page.html", "app/views/page-#{index + 1}.html"
+    end
   end
 
   def add_confirmation_page
