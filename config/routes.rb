@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   root to: redirect("/journeys")
 
   resources :journeys do
-    get "/export", to: "export#show"
-    post "/export", to: "export#create"
-
+    resources :exports, only: %i[index show create]
     resources :pages
   end
 

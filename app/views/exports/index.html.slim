@@ -5,7 +5,7 @@
     h1 Export your journey
 
     p
-      | Use the button below to create a zip file with a custom version of the
+      | Use the Export button to create a zip file with a custom version of the
       a< href="https://github.com/x-govuk/govuk-prototype-rig"
         | x-govuk/govuk-prototype-rig
       | . Read the
@@ -26,3 +26,14 @@
 
     = form_with do |f|
       = f.govuk_submit "Export"
+
+    - unless @journey.exports.length.zero?
+      h2 #{@journey.exports.length} of #{@journey.exports.length} exports
+
+    = govuk_summary_list do |summary_list|
+      - @journey.exports.each do |export|
+        - summary_list.row do |row|
+          - row.key(text: export.name.gsub("tmp/", ""))
+          - row.action(text: "Download",
+            href: journey_export_path(id: export.id),
+            visually_hidden_text: export.name.gsub("tmp/", ""))
