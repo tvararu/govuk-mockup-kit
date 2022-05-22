@@ -1,6 +1,9 @@
 class ExportsController < ApplicationController
   before_action :set_journey
 
+  class ExportFailure < StandardError
+  end
+
   # GET /journeys/1/exports
   def index
   end
@@ -12,7 +15,7 @@ class ExportsController < ApplicationController
 
   # POST /journeys/1/exports
   def create
-    system "rails export #{@journey.id}"
+    raise ExportFailure unless system "rails export #{@journey.id}"
 
     send_export(@journey.exports.last)
   end

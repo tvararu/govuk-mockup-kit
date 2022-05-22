@@ -30,7 +30,7 @@
     - unless @journey.exports.length.zero?
       h2 Previous exports
 
-      p Your last 5 exports are stored.
+      p Your last #{Export::MAX_EXPORTS} exports are stored.
 
       dl.govuk-summary-list
         - @journey.exports.order(created_at: :desc).each do |export|

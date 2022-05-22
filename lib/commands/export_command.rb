@@ -24,8 +24,9 @@ class ExportCommand < Rails::Command::Base
 
   def new_export(id)
     @journey = Journey.find(id)
+    last_version = @journey.exports.order(created_at: :asc).last&.version || 0
     @export = @journey.exports.new
-    @folder = "tmp/journey-#{@journey.id}-v#{@journey.exports.size + 1}"
+    @folder = "tmp/journey-#{@journey.id}-v#{last_version + 1}"
     @export.name = "#{@folder}.zip"
   end
 
