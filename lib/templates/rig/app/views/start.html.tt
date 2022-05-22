@@ -1,1 +1,16 @@
-<p>foo</p>
+{% extends "layouts/default.html" %}
+
+{% set title = "<%= @journey.title %>" %}
+
+{% block main %}
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <h1 class="govuk-heading-xl"><%= @journey.title %></h1>
+      {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true
+      }) }}
+    </main>
+  </div>
+{% endblock %}

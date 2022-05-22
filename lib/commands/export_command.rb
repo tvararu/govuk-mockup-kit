@@ -42,6 +42,7 @@ class ExportCommand < Rails::Command::Base
   def new_export
     last_version = @journey.exports.order(created_at: :asc).last&.version || 0
     @export = @journey.exports.new
+
     @destination = "tmp/journey-#{@journey.id}-v#{last_version + 1}"
     self.destination_root = @destination
     @export.name = "#{@destination}.zip"
