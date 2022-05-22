@@ -26,6 +26,7 @@ class ExportCommand < Rails::Command::Base
 
     update_service_name
     add_start_page
+    add_confirmation_page
 
     unless destination
       zip_it_up
@@ -74,6 +75,10 @@ class ExportCommand < Rails::Command::Base
     gsub_file "app/views/index.html",
               "startButton: {\n      href: \"#\"",
               "startButton: {\n      href: \"/start\""
+  end
+
+  def add_confirmation_page
+    template "app/views/confirmation.html"
   end
 
   def zip_it_up

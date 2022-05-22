@@ -8,7 +8,7 @@
       <h1 class="govuk-heading-xl"><%= @journey.title %></h1>
       {{ govukButton({
         text: "Start now",
-        href: "#",
+        href: "/confirmation",
         isStartButton: true
       }) }}
     </main>
