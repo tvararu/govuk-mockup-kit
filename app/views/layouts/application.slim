@@ -47,7 +47,8 @@ html.govuk-template lang="en"
 
     = govuk_skip_link
 
-    = govuk_header(service_name: 'Mockup Kit')
+    = govuk_header do |header|
+      - header.product_name name: 'Mockup Kit'
 
     .govuk-width-container
       = govuk_phase_banner(tag: { text: "Experiment" })
