@@ -2,8 +2,6 @@ require "./lib/zip_file_generator"
 
 REPO = "https://github.com/x-govuk/govuk-prototype-rig".freeze
 CLONE = "tmp/rig".freeze
-EXPORT = "tmp/prototype-v1".freeze
-OUTZIP = "tmp/prototype-v1.zip".freeze
 
 class ExportCommand < Rails::Command::Base
   include Thor::Actions
@@ -13,18 +11,22 @@ class ExportCommand < Rails::Command::Base
   def export(journey_id)
     require_application_and_environment!
 
-    find_journey(journey_id)
+    new_export(journey_id)
     git_clone
     cp_new_folder
     git_rm_remote
     update_service_name
     zip_it_up
+    save_to_database
   end
 
   private
 
-  def find_journey(id)
+  def new_export(id)
     @journey = Journey.find(id)
+    @export = @journey.exports.new
+    @folder = "tmp/journey-#{@journey.id}-v#{@journey.exports.size + 1}"
+    @export.name = "#{@folder}.zip"
   end
 
   def git_clone
@@ -32,20 +34,23 @@ class ExportCommand < Rails::Command::Base
   end
 
   def cp_new_folder
-    system "cp -r #{CLONE} #{EXPORT}" unless File.exist? EXPORT
+    system "cp -r #{CLONE} #{@folder}"
   end
 
   def git_rm_remote
-    system "cd #{EXPORT} && git remote rm origin >/dev/null 2>&1"
+    system "cd #{@folder} && git remote rm origin"
   end
 
   def update_service_name
-    gsub_file "#{EXPORT}/package.json", "Your service name", @journey.title
+    gsub_file "#{@folder}/package.json", "Your service name", @journey.title
   end
 
   def zip_it_up
-    remove_file OUTZIP
-    zf = ZipFileGenerator.new(EXPORT, OUTZIP)
-    zf.write
+    ZipFileGenerator.new(@folder, @export.name).write
+  end
+
+  def save_to_database
+    @export.data = File.read(@export.name)
+    @export.save!
   end
 end
