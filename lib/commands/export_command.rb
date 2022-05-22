@@ -24,7 +24,6 @@ class ExportCommand < Rails::Command::Base
       git_rm_remote
     end
 
-    set_destination_folder
     update_service_name
     add_start_page
 
@@ -43,12 +42,14 @@ class ExportCommand < Rails::Command::Base
   def new_export
     last_version = @journey.exports.order(created_at: :asc).last&.version || 0
     @export = @journey.exports.new
-    @folder = "tmp/journey-#{@journey.id}-v#{last_version + 1}"
-    @export.name = "#{@folder}.zip"
+    @destination = "tmp/journey-#{@journey.id}-v#{last_version + 1}"
+    self.destination_root = @destination
+    @export.name = "#{@destination}.zip"
   end
 
   def reuse_export(existing_folder)
-    @folder = existing_folder
+    @destination = existing_folder
+    self.destination_root = @destination
   end
 
   def git_clone
@@ -56,15 +57,11 @@ class ExportCommand < Rails::Command::Base
   end
 
   def cp_new_folder
-    system "cp -r #{CLONE} #{@folder}"
+    system "cp -r #{CLONE} #{@destination}"
   end
 
   def git_rm_remote
-    system "cd #{@folder} && git remote rm origin"
-  end
-
-  def set_destination_folder
-    self.destination_root = @folder
+    system "cd #{@destination} && git remote rm origin"
   end
 
   def update_service_name
@@ -79,7 +76,7 @@ class ExportCommand < Rails::Command::Base
   end
 
   def zip_it_up
-    ZipFileGenerator.new(@folder, @export.name).write
+    ZipFileGenerator.new(@destination, @export.name).write
   end
 
   def save_to_database
