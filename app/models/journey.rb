@@ -9,6 +9,7 @@
 #
 class Journey < ApplicationRecord
   has_many :pages, dependent: :destroy
+  has_many :exports, dependent: :destroy
 
   validates :title, presence: true
 end
