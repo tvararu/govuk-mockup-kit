@@ -1,0 +1,7 @@
+.govuk-summary-list__row
+  dt.govuk-summary-list__key= export.filename
+  dd.govuk-summary-list__actions
+    = govuk_link_to journey_export_path(id: export.id),
+      target: "_blank" do
+        | Download
+        span<.govuk-visually-hidden= export.filename
