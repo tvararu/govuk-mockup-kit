@@ -35,6 +35,19 @@ about it.
 
 [Read the MVP design post.](docs/2022-05-22-intro.md)
 
+## Roadmap
+
+- [x] 💥 Creating journeys
+- [x] 📑 Adding pages
+- [x] 🕵️ Previewing
+- [x] 📠 Export to prototype kit
+- [ ] 🔄 Syncing with a prototype
+- [ ] 🧾 Check your answers
+- [ ] 🏁 Customisable end page
+- [ ] 📽️ Live preview
+- [ ] ♻️ Reordering
+- [ ] 🎶 Multiple page types
+
 ## Setup
 
 Standard Rails 7 / Ruby 3 project. Example:
