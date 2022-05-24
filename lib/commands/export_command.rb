@@ -19,7 +19,7 @@ class ExportCommand < Rails::Command::Base
     if destination
       reuse_export(destination)
     else
-      new_export(journey_id)
+      new_export
       cp_new_folder
       git_rm_remote
     end
