@@ -7,7 +7,15 @@ A website builder that uses the GOV.UK Design System.
 The design is derivative of (N.B.: stolen from) [GOV.UK
 Forms](https://forms-prototypes.london.cloudapps.digital/).
 
-Hosted here: **https://govuk-mockup-kit.herokuapp.com/** (username/password: mockup/kit)
+### Hosted
+
+`main` branch: **https://govuk-mockup-kit.fly.dev/** (username/password: mockup/kit)
+
+Previous versions:
+
+| Branch | Design history post                                           | URL (Heroku might take a while to spin up)               |
+| ------ | ------------------------------------------------------------- | -------------------------------------------------------- |
+| `mvp`  | [22/05 – MVP design and build](docs/2022-05-22-mvp-design.md) | https://govuk-mockup-kit-mvp.herokuapp.com/ (mockup/kit) |
 
 ## What is this
 
@@ -32,8 +40,6 @@ This project will probably never be finished (maybe it isn't worth building?),
 but like most things I work on and never finish I pushed it up to GitHub
 anyway. If it sounds cool to you too feel free to reach out and chat to me
 about it.
-
-[Read the MVP design post.](docs/2022-05-22-mvp-design.md)
 
 ## Roadmap
 
