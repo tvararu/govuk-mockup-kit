@@ -33,7 +33,7 @@ but like most things I work on and never finish I pushed it up to GitHub
 anyway. If it sounds cool to you too feel free to reach out and chat to me
 about it.
 
-[Read the MVP design post.](docs/2022-05-22-intro.md)
+[Read the MVP design post.](docs/2022-05-22-mvp-design.md)
 
 ## Roadmap
 
