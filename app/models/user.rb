@@ -26,4 +26,5 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable
+  devise :omniauthable, omniauth_providers: %i[github]
 end
