@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: redirect("/journeys")
 
-  devise_for :users
+  devise_for :users,
+             controllers: {
+               omniauth_callbacks: "users/omniauth_callbacks"
+             }
 
   resources :journeys do
     resources :exports, only: %i[index show create]
