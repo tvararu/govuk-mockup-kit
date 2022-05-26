@@ -19,6 +19,7 @@ gem "govuk-components"
 gem "govuk_design_system_formbuilder"
 
 gem "devise"
+gem "dotenv-rails", groups: %i[development test]
 gem "omniauth-github"
 gem "omniauth-rails_csrf_protection"
 gem "rubyzip"
