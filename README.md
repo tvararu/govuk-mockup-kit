@@ -47,7 +47,7 @@ about it.
 - [x] 📑 Adding pages
 - [x] 🕵️ Previewing
 - [x] 📠 Export to prototype kit
-- [ ] 🕴️ Login with GitHub
+- [x] 🕴️ Login with GitHub
 - [ ] ⛴️ Import an existing prototype
 - [ ] 💻 Editing pages in code
 - [ ] 🔄 Syncing with a prototype
