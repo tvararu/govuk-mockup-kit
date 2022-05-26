@@ -108,6 +108,10 @@ GEM
     digest (3.1.0)
     e2mmap (0.1.0)
     erubi (1.10.0)
+    faraday (2.3.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.3)
     ferrum (0.11)
       addressable (~> 2.5)
       cliver (~> 0.3)
@@ -128,6 +132,7 @@ GEM
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
+    hashie (5.0.0)
     hotwire-livereload (1.1.0)
       listen (>= 3.0.0)
       rails (>= 6.0.0)
@@ -139,6 +144,7 @@ GEM
     jaro_winkler (1.5.4)
     jsbundling-rails (1.0.2)
       railties (>= 6.0.0)
+    jwt (2.3.0)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -156,6 +162,8 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    multi_json (1.15.0)
+    multi_xml (0.6.0)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -173,6 +181,25 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
+    oauth2 (1.4.9)
+      faraday (>= 0.17.3, < 3.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (2.1.0)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-github (2.0.0)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.7.1)
+    omniauth-oauth2 (1.7.2)
+      oauth2 (~> 1.4)
+      omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.0)
@@ -189,6 +216,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-protection (2.2.0)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.3)
@@ -258,6 +287,7 @@ GEM
     rubocop-rspec (2.10.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
@@ -342,6 +372,8 @@ DEPENDENCIES
   govuk_design_system_formbuilder
   hotwire-livereload
   jsbundling-rails
+  omniauth-github
+  omniauth-rails_csrf_protection
   pg
   prettier_print
   propshaft
