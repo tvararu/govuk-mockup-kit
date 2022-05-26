@@ -9,7 +9,7 @@ h1 {
 }
 
 .govuk-panel--confirmation h1 {
-  color: #ffffff;
+  color: govuk-colour("white");
 }
 
 h2 {
@@ -38,4 +38,32 @@ ol {
 
 input[disabled] {
   border-color: $govuk-border-colour;
+}
+
+.app-header__navigation {
+  float: right;
+  margin-bottom: 0;
+
+  &-item {
+    color: govuk-colour("white");
+    font-size: 1rem;
+  }
+}
+
+.app-button-link {
+  background: none;
+  border: none;
+  color: govuk-colour("white");
+  cursor: pointer;
+  font-family: $govuk-font-family-gds-transport;
+  font-size: $govuk-root-font-size;
+  font-weight: bold;
+  line-height: 1.25;
+
+  &:hover {
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: $govuk-link-hover-underline-thickness;
+    text-decoration-line: underline;
+    text-underline-offset: 0.1em;
+  }
 }

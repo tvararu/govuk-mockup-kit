@@ -47,8 +47,16 @@ html.govuk-template lang="en"
 
     = govuk_skip_link
 
-    = govuk_header do |header|
+    = govuk_header(navigation_classes: 'app-header__navigation') do |header|
       - header.product_name name: 'Mockup Kit'
+      - if current_user
+        - header.navigation_item(text: current_user.email,
+          classes: "app-header__navigation-item",
+          active: false)
+        - header.navigation_item(text: "Sign out",
+          destroy: destroy_user_session_path,
+          options: { data: { turbo: false } },
+          active: false)
 
     .govuk-width-container
       = govuk_phase_banner(tag: { text: "Experiment" })
