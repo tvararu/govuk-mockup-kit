@@ -1,0 +1,11 @@
+h1= t('service.name')
+
+
+= govuk_button_to "Sign in with GitHub", user_github_omniauth_authorize_path,
+  data: { turbo: false }
+
+p
+  | Or
+  =<link_to "use without an account", journeys_path,
+    class: "govuk-link--no-visited-state"
+  | .
