@@ -18,6 +18,7 @@ gem "turbo-rails"
 gem "govuk-components"
 gem "govuk_design_system_formbuilder"
 
+gem "devise"
 gem "rubyzip"
 
 group :development, :test do
