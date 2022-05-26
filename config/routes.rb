@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: redirect("/journeys")
+
+  devise_for :users
 
   resources :journeys do
     resources :exports, only: %i[index show create]
