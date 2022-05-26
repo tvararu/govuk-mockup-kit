@@ -67,10 +67,29 @@ asdf install # Install optimal ruby/nodejs/etc versions, see .tool-versions
 pg_ctl start # If not already running postgres
 
 bin/setup    # bundle / yarn / database setup
+vim .env     # See the OAuth app section below
 
 bin/dev      # Local development on http://localhost:3000
 bin/lint     # Run linters
 bin/test     # Run all tests
+```
+
+### Creating an OAuth App for local development
+
+1. Go to [Github > Settings > Developer settings > OAuth
+   Apps](https://github.com/settings/developers)
+1. Click on "New OAuth App"
+1. Set name and URL to anything
+1. Set "Authorization callback URL" to
+   `http://localhost:3000/users/auth/github/callback`
+1. Regiser application
+1. Generate a secret
+1. Edit `.env`
+
+```sh
+# .env
+GITHUB_KEY=Replace with the Client ID from your OAuth App
+GITHUB_SECRET=Generate a client secret
 ```
 
 ## Licence
