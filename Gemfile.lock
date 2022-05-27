@@ -318,7 +318,6 @@ GEM
     solargraph-rails (0.3.1)
       activesupport
       solargraph (>= 0.41.1)
-    spring (4.0.0)
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.3)
@@ -390,7 +389,6 @@ DEPENDENCIES
   slim-rails
   solargraph
   solargraph-rails
-  spring
   stimulus-rails
   syntax_tree
   syntax_tree-haml

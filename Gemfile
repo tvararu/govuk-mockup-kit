@@ -30,7 +30,6 @@ end
 
 group :development do
   gem "hotwire-livereload"
-  gem "spring"
   gem "web-console"
 
   gem "annotate", require: false
