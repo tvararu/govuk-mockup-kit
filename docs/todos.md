@@ -1,6 +1,7 @@
 # DEV TODOS
 
 - [ ] [Schmooze](https://github.com/Shopify/schmooze) spike
+- [ ] Seeding an initial journey
 - [ ] Write more tests, calculate actual coverage
 - [ ] Import Git repo
 - [ ] Make a change to a git repo
