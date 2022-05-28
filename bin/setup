@@ -18,7 +18,7 @@ FileUtils.chdir APP_ROOT do
   system("bundle check") || system!("bundle install")
 
   puts "\n== Installing Node.js dependencies =="
-  system! "yarn"
+  system! "yarn --silent"
 
   puts "\n== Copying sample files =="
   FileUtils.cp "env.sample", ".env" unless File.exist?(".env")
