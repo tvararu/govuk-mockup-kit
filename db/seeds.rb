@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+journey = Journey.create! title: "Apply for a juggling licence"
+journey.pages.tap do |p|
+  p.create! title: "What is your name?"
+  p.create! title: "Where did you learn to juggle?"
+  p.create! title: "What is your address?"
+end
