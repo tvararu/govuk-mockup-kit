@@ -17,14 +17,22 @@ class JourneysTest < ApplicationSystemTestCase
     then_i_see_an_error
 
     when_i_type_the_title
-    and_i_continue
+    and_i_click_continue
     then_i_see_the_journey_page
 
     when_i_click_edit_title
     then_i_see_the_title_form
 
-    when_i_click_continue
+    when_i_type_an_empty_title
+    and_i_click_continue
+    then_i_see_an_error
+
+    when_i_type_the_title
+    and_i_click_continue
     then_i_see_the_journey_page
+
+    when_i_click_delete
+    then_i_see_the_destroy_message
   end
 
   def given_i_am_on_the_journeys_page
@@ -34,7 +42,7 @@ class JourneysTest < ApplicationSystemTestCase
   def when_i_click_continue
     click_on "Save and continue"
   end
-  alias_method :and_i_continue, :when_i_click_continue
+  alias_method :and_i_click_continue, :when_i_click_continue
 
   def when_i_click_create
     click_on "Create a journey"
@@ -48,20 +56,33 @@ class JourneysTest < ApplicationSystemTestCase
     fill_in "What is the name of your journey?", with: "Test journey"
   end
 
+  def when_i_type_an_empty_title
+    fill_in "What is the name of your journey?", with: ""
+  end
+
+  def when_i_click_delete
+    find("details summary").click
+    click_on "Delete this journey"
+  end
+
   def then_i_see_an_error
-    assert_selector "h2", text: "There is a problem"
+    assert_text "There is a problem"
   end
 
   def then_i_see_the_journey_page
-    assert_selector "h1", text: "Journey overview"
+    assert_text "Journey overview"
   end
 
   def then_i_see_the_title_form
-    assert_selector "h1", text: "What is the name of your journey?"
+    assert_text "What is the name of your journey?"
   end
 
   def then_i_see_two_journeys
-    assert_selector "dt", text: "Foo"
-    assert_selector "dt", text: "Bar"
+    assert_text "Foo"
+    assert_text "Bar"
+  end
+
+  def then_i_see_the_destroy_message
+    assert_text "Journey was successfully destroyed"
   end
 end
