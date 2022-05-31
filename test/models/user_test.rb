@@ -24,7 +24,22 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "self.from_omniauth" do
+    auth =
+      OpenStruct.new(
+        provider: "Provider",
+        uid: "123",
+        info:
+          OpenStruct.new(
+            email: "alice@example.com",
+            name: "Alice Example",
+            nickname: "alicee",
+            image: "image.png"
+          )
+      )
+
+    alice = User.from_omniauth(auth)
+
+    assert_equal alice.name, "Alice Example"
+  end
 end
