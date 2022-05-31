@@ -36,6 +36,7 @@ class JourneysTest < ApplicationSystemTestCase
   end
 
   def given_i_am_on_the_journeys_page
+    page.driver.basic_authorize "mockup", "kit"
     visit journeys_url
   end
 
