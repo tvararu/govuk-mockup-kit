@@ -6,8 +6,9 @@ class JourneysTest < ApplicationSystemTestCase
     Journey.create! title: "Bar"
   end
 
-  test "end to end" do
-    given_i_am_on_the_journeys_page
+  test "runs end to end without an account" do
+    given_i_am_on_the_start_page
+    when_i_click_use_without_an_account
     then_i_see_two_journeys
 
     when_i_click_create
@@ -35,9 +36,13 @@ class JourneysTest < ApplicationSystemTestCase
     then_i_see_the_destroy_message
   end
 
-  def given_i_am_on_the_journeys_page
+  def given_i_am_on_the_start_page
     page.driver.basic_authorize "mockup", "kit"
-    visit journeys_url
+    visit start_url
+  end
+
+  def when_i_click_use_without_an_account
+    click_on "use without an account"
   end
 
   def when_i_click_continue
