@@ -1,3 +1,4 @@
 #!/bin/sh
 
 SKIP_BUILD=1 bin/rails test:all
+xdg-open coverage/index.html
