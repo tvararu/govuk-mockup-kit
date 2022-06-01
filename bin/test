@@ -1,3 +1,3 @@
 #!/bin/sh
 
-bin/rails test:all
+SKIP_BUILD=1 bin/rails test:all
