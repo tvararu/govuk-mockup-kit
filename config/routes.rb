@@ -6,6 +6,10 @@ Rails.application.routes.draw do
                omniauth_callbacks: "users/omniauth_callbacks"
              }
 
+  devise_scope :user do
+    get "/users/auth/failure", to: "users/omniauth_callbacks#failure"
+  end
+
   get "/start", to: "static#start"
 
   resources :journeys do
