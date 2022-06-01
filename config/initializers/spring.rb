@@ -1,1 +1,1 @@
-Spring.quiet = true
+Spring.quiet = true if defined?(Spring)
