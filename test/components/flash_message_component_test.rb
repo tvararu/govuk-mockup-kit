@@ -1,7 +1,7 @@
 require "test_helper"
 
 class FlashMessageComponentTest < ViewComponent::TestCase
-  def test_foo
+  test "renders a heading and a body" do
     render_inline FlashMessageComponent.new(flash: { success: %w[Title Body] })
 
     assert_selector ".govuk-notification-banner__heading", text: "Title"
