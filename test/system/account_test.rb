@@ -1,7 +1,7 @@
 require "application_system_test_case"
 
 class AccountTest < ApplicationSystemTestCase
-  test "signing in and out works" do
+  it "signing in and out works" do
     given_i_am_on_the_start_page
     when_i_click_sign_in
     then_i_am_signed_in_successfully
@@ -16,6 +16,8 @@ class AccountTest < ApplicationSystemTestCase
     when_i_click_sign_in
     then_i_see_an_error
   end
+
+  private
 
   def given_i_am_on_the_start_page
     page.driver.basic_authorize "mockup", "kit"

@@ -20,17 +20,17 @@
 require "test_helper"
 
 class ExportTest < ActiveSupport::TestCase
-  test "#filename" do
-    export = Export.new name: "tmp/journey-42-v1337.zip"
+  it "#filename" do
+    export = described_class.new name: "tmp/journey-42-v1337.zip"
     assert_equal export.filename, "journey-42-v1337.zip"
   end
 
-  test "#version" do
-    export = Export.new name: "tmp/journey-42-v1337.zip"
+  it "#version" do
+    export = described_class.new name: "tmp/journey-42-v1337.zip"
     assert_equal export.version, 1337
   end
 
-  test "creating more than 5 destroys old ones" do
+  it "creating more than 5 destroys old ones" do
     journey = Journey.create! title: "New journey"
     6.times { |x| journey.exports.create! data: "123", name: x }
 

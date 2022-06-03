@@ -6,7 +6,7 @@ class JourneysTest < ApplicationSystemTestCase
     Journey.create! title: "Bar"
   end
 
-  test "runs end to end without an account" do
+  it "runs end to end without an account" do
     given_i_am_on_the_start_page
     when_i_click_use_without_an_account
     then_i_see_two_journeys
@@ -35,6 +35,8 @@ class JourneysTest < ApplicationSystemTestCase
     when_i_click_delete
     then_i_see_the_destroy_message
   end
+
+  private
 
   def given_i_am_on_the_start_page
     page.driver.basic_authorize "mockup", "kit"

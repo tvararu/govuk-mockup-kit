@@ -24,7 +24,7 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  test "self.from_omniauth" do
+  it "self.from_omniauth" do
     auth =
       OpenStruct.new(
         provider: "Provider",
@@ -38,7 +38,7 @@ class UserTest < ActiveSupport::TestCase
           )
       )
 
-    alice = User.from_omniauth(auth)
+    alice = described_class.from_omniauth(auth)
 
     assert_equal alice.name, "Alice Example"
   end

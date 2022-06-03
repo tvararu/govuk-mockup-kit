@@ -167,6 +167,9 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    minitest-spec-rails (6.1.0)
+      minitest (>= 5.0)
+      railties (>= 4.1)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.2.3)
@@ -383,6 +386,7 @@ DEPENDENCIES
   govuk_design_system_formbuilder
   hotwire-livereload
   jsbundling-rails
+  minitest-spec-rails
   omniauth-github
   omniauth-rails_csrf_protection
   pg

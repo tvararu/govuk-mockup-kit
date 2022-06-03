@@ -45,5 +45,6 @@ end
 
 group :test do
   gem "cuprite"
+  gem "minitest-spec-rails"
   gem "simplecov", require: false
 end
