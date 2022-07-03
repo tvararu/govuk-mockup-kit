@@ -23,15 +23,15 @@ class GovukHeaderComponent < GovukComponent::HeaderComponent
     end
 
     def call
-      tag.li(class: classes.append(active_class), **html_attributes) do
+      tag.li(**html_attributes) do
         if link?
-          link_to(text, href, **options, class: "govuk-header__link")
+          link_to(text, href, class: "govuk-header__link", **options)
         elsif destroy?
           button_to(
             text,
             destroy,
-            method: :delete,
             **options,
+            method: :delete,
             class: "app-button-link"
           )
         else
