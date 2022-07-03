@@ -15,6 +15,9 @@ OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
       name: "Alice Example",
       nickname: "alicee",
       image: "image.png"
+    },
+    credentials: {
+      token: "0xDEADBEEF"
     }
   }
 )
