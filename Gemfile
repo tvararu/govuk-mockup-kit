@@ -24,6 +24,10 @@ gem "omniauth-github"
 gem "omniauth-rails_csrf_protection"
 gem "rubyzip"
 
+gem "dfe-autocomplete",
+    require: "dfe/autocomplete",
+    github: "DFE-Digital/dfe-autocomplete"
+
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end
