@@ -10,7 +10,7 @@
     "@hotwired/turbo-rails": "^7.1.1",
     "esbuild": "^0.15.3",
     "govuk-frontend": "^4.3.0",
-    "sass": "^1.54.4"
+    "sass": "^1.54.5"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --resolve-extensions=.js,.mjs",
