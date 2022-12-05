@@ -6,7 +6,7 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
-    "@hotwired/stimulus": "^3.1.0",
+    "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo-rails": "^7.2.0",
     "esbuild": "^0.15.10",
     "govuk-frontend": "^4.3.1",
